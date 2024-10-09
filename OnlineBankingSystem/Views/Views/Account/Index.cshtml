@@ -1,0 +1,33 @@
+﻿@model IEnumerable<OnlineBankingSystem.Models.Account>
+
+@{
+    ViewData["Title"] = "Accounts";
+}
+
+<h2>Accounts</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>Account Holder</th>
+            <th>Account Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@account.AccountNumber</td>
+                <td>@account.AccountHolder</td>
+                <td>@account.GetType().Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-accountNumber="@account.AccountNumber">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New Account</a>

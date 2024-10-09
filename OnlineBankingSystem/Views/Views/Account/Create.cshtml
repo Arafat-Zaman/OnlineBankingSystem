@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Create Account";
+}
+
+<h2>Create Account</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" name="phone" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Account Type</label>
+        <select name="accountType" class="form-control" required>
+            <option value="Savings">Savings</option>
+            <option value="Current">Current</option>
+            <option value="Business">Business</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
